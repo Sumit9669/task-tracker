@@ -21,7 +21,7 @@ class DatabaseRouter {
   }
 
   private mountRoutes() {
-    this.router.get("/mysql", this.createMySqlDatabase);
+    this.router.get("/setup-db", this.createMySqlDatabase);
   }
 
   /**

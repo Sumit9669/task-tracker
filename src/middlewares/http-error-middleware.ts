@@ -4,7 +4,7 @@ import { ExpressJoiError } from "express-joi-validation";
 
 // File imports
 import logger from "@shared/logger";
-import { EntityType, HttpStatusCodes } from "src/enums/common-enums";
+import { HttpStatusCodes } from "src/enums/common-enums";
 import { CommonFunctions } from "@shared/common-functions";
 import MessageConstants from "@constants/response.constants";
 import { HttpService } from "@shared/http.service";
@@ -142,10 +142,9 @@ const HandleException = (error: any, request: Request, response: Response) => {
     serviceCode: error.serviceCode,
     statusCode: error.statusCode,
   };
-  console.log(errorDetails);
   response
     .status(errorDetails.statusCode)
-    .json({ status: false, message: error });
+    .json({ status: false, message: errorDetails.message });
 };
 
 /**

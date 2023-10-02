@@ -1,5 +1,3 @@
-import { OperationType } from "./../enums/operation-types";
-import { BusinessEntities } from "src/enums/common-enums";
 import { MessageConstants } from "@constants/response.constants";
 import { GeneralHttpExceptions } from "src/custom-exceptions/general-exceptions.constants";
 import TaskTrackerException from "src/custom-exceptions/tracker.exception";

@@ -1,6 +1,5 @@
 import { Request } from "express";
 import { HttpService } from "@shared/http.service";
-import { BusinessSyncSettingDefaultParams } from "src/enums/sync-setting-enums";
 
 export class CommonFunctions {
   httpService: HttpService;
@@ -43,37 +42,5 @@ export class CommonFunctions {
       const v = c === "x" ? r : (r & 0x3) | 0x8;
       return v.toString(16);
     });
-  }
-
-  createQuerystring = (data: string[]) => {
-    let queryinitialstring = "(";
-    data.forEach((element: any, index: number, res: any) => {
-      if (index === res.length - 1) {
-        queryinitialstring += "'" + element + "'";
-      } else {
-        queryinitialstring += "'" + element + "',";
-      }
-    });
-    queryinitialstring += ")";
-    return queryinitialstring;
-  };
-
-  /**
-   * lower the string
-   * @param str
-   */
-  lowerTheString(str: any) {
-    return str.toLowerCase();
-  }
-
-  /**
-   * to get number of record that are skipped
-   * @param pageNumber pass page number
-   * @param pageSize pass page size
-   */
-  public paginationLogic(pageNumber: number, pageSize: number) {
-    pageNumber = pageNumber || BusinessSyncSettingDefaultParams.pageNumber;
-    pageSize = pageSize || BusinessSyncSettingDefaultParams.pageSize;
-    return { offset: (pageNumber - 1) * pageSize, pageSize, pageNumber };
   }
 }

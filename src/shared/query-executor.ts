@@ -15,7 +15,7 @@ export const ExecuteQuery = async (
 ): Promise<any> => {
   return new Promise(async (resolve, reject) => {
     // const db: Database = Database.getDBInstance();
-    let poolConn = app.get("DB");
+    let poolConn = app.get("MYSQL_DB");
     let connection = con || poolConn;
     if (data) {
       connection.query(qry, [data], async (err: Error, result: any) => {
