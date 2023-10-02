@@ -16,8 +16,13 @@ lates node and typescript version should be installed in the system to run appli
 # How to use
 
 Step 1: do npm i
+
 step 2: setup env using default env
+
+
 step 3: run application using command: npm run start:dev
+
+
 step 4: open swagger using local:port/api-docs hit /setup-db or through postman hit /setup-db;
 
 Now basic setup of application is setup and can be used using crud api's
